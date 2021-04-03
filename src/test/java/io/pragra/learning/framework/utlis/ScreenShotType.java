@@ -1,2 +1,5 @@
-package io.pragra.learning.framework.utlis;public enum ScreenShotType {
+package io.pragra.learning.framework.utlis;
+
+public enum ScreenShotType {
+    PASS, FAIL
 }
