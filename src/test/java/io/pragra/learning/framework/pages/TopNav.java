@@ -1,10 +1,16 @@
 package io.pragra.learning.framework.pages;
 
+import io.pragra.learning.framework.pages.meeting.ContactSales;
+import io.pragra.learning.framework.pages.meeting.JoinAMeetingPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import javax.swing.*;
 
 public class TopNav {
     private WebDriver webDriver;
@@ -21,6 +27,16 @@ public class TopNav {
 
     @FindBy(xpath = "//div[@id='black-topbar']/div/ul/li[4]")
     private WebElement support;
+    @FindBy(xpath = "//div[@class='navbar-collapse collapse']//ul//li/a")
+    private WebElement solutions;
+    @FindBy(xpath = "//*[@id=\"navbar\"]/ul[1]/li[7]/a")
+    private WebElement pp;
+    @FindBy(xpath ="//*[@id=\"navbar\"]/ul[1]/li[9]/a" )
+    private WebElement contactSales;
+   @FindBy(xpath = "//div[@class='navbar-collapse collapse']//ul//li//a[@id='btnJoinMeeting']")
+private WebElement join;
+
+
 
     public TopNav(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -31,6 +47,16 @@ public class TopNav {
         this.reqDemoLink.click();
         return new RequestADemoPage(webDriver);
     }
+
+    public ContactSales clickRequest3(){
+        this.contactSales.click();
+        return new ContactSales(webDriver);
+    }
+  /*  public JoinAMeetingPage clickRequest4(){
+        this.join.click();
+        return new JoinAMeetingPage(webDriver);
+    }*/
+
 
     public WebElement getReqDemoLink() {
         return reqDemoLink;
