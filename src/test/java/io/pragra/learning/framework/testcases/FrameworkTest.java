@@ -36,9 +36,9 @@ public class FrameworkTest {
             Utils.captureScreenShot(driver, "checkBrowserTest", ScreenShotType.PASS);
 
             driver.quit();
-        } catch (InvalidArgumentException e) {
+        }
 
-        } catch (ScreenshotException e) {
+        catch (ScreenshotException e) {
             System.out.println("The element cannot be captured");
 
         }

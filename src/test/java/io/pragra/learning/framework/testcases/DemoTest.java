@@ -4,6 +4,8 @@ import io.pragra.learning.framework.config.Config;
 import io.pragra.learning.framework.drivermanager.DriverManager;
 import io.pragra.learning.framework.pages.RequestADemoPage;
 import io.pragra.learning.framework.pages.TopNav;
+import io.pragra.learning.framework.pages.meeting.ContactSales;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.ElementNotInteractableException;
@@ -18,7 +20,7 @@ import java.net.MalformedURLException;
 import java.util.logging.Logger;
 
 public class DemoTest {
-    Logger log = Logger.getLogger(DemoTest.class.getName());
+    static Logger log = Logger.getLogger("DemoTest.class");
 
     WebDriver driver;
     TopNav topNav;
@@ -31,8 +33,8 @@ public class DemoTest {
         try {
             driver = DriverManager.getDriver();
             driver.get(((String) Config.getProperty("app.url")));
-        } catch (UnreachableBrowserException e) {
-            System.out.println("The Browser is unable to open");
+        } catch (NullPointerException e) {
+            System.out.println("No such key specified in the properties");
             e.printStackTrace();
         }
     }
@@ -47,7 +49,7 @@ public class DemoTest {
             RequestADemoPage requestADemoPage = topNav.clickRequest();
 
 
-            Assert.assertEquals(requestADemoPage.getPageHeading().getText(), "Request a Demo");
+            Assert.assertEquals(requestADemoPage.getPageHeading().getText(), "Requesting a Demo");
 
 
             requestADemoPage
@@ -55,10 +57,9 @@ public class DemoTest {
                     .keyInCompany("ABC CORP")
                     .keyLastName("SS")
                     .keyFirstName("AASDR");
-        } catch (ElementNotSelectableException e) {
-            System.out.println("The element is not clickable");
-        } catch (InvalidArgumentException e) {
-            System.out.println("The element argument does not match with the expected result ");
+
+        } catch (AssertionError e) {
+            System.out.println("Mismatch of expected and actual");
         }
     }
 
