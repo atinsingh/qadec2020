@@ -28,16 +28,21 @@ public class TopNav {
 
     @FindBy(xpath = "//div[@id='black-topbar']/div/ul/li[4]")
     private WebElement support;
+
+    @FindBy(xpath = "//div[@class='navbar-collapse collapse']//ul//li/a")
+    private WebElement solutions;
     @FindBy(xpath = "//*[@id=\"navbar\"]/ul[1]/li[7]/a")
     private WebElement pp;
     @FindBy(xpath ="//*[@id=\"navbar\"]/ul[1]/li[9]/a" )
     private WebElement contactSales;
    @FindBy(xpath = "//div[@class='navbar-collapse collapse']//ul//li//a[@id='btnJoinMeeting']")
 private WebElement join;
+
    @FindBy(xpath = "//div[@class='navbar-collapse collapse']//ul[@role='navigation']//li[@class='dropdown mobile-hide']//a[@id='btnSolutions']")
    private WebElement solutions;
    @FindBy(xpath = "//*[@id=\"first-col-nav\"]/div/ul/li[1]/a")
    private WebElement meeting;
+
 
 
 
@@ -55,6 +60,11 @@ private WebElement join;
         this.contactSales.click();
         return new ContactSales(webDriver);
     }
+
+  /*  public JoinAMeetingPage clickRequest4(){
+        this.join.click();
+        return new JoinAMeetingPage(webDriver);
+    }*/
     public JoinAMeetingPage clickRequest4(){
         this.join.click();
         return new JoinAMeetingPage(webDriver);
@@ -64,6 +74,7 @@ private WebElement join;
       ac.moveToElement(solutions).moveToElement(meeting).click().build().perform();
         return new Solutions(webDriver);
     }
+
 
 
     public WebElement getReqDemoLink() {
