@@ -4,7 +4,6 @@ import io.pragra.learning.framework.config.Config;
 import io.pragra.learning.framework.drivermanager.DriverManager;
 import io.pragra.learning.framework.utlis.ScreenShotType;
 import io.pragra.learning.framework.utlis.Utils;
-import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.ScreenshotException;
@@ -19,7 +18,6 @@ public class FrameworkTest {
 
     @Test
     public void tc() {
-        DOMConfigurator.configure("/Users/agilaethiraj/IdeaProjects/qadec2020/src/log4j.xml");
         log.info("Executing First test case, checking broswer name");
         Assert.assertEquals(Config.getProperty("browser.name"), "chrome");
     }

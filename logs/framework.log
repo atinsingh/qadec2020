@@ -1,0 +1,8 @@
+[32m[INFO ] 2021-04-06 22:05:15.762 [main] Config - Reading configuration file from:  src/test/resources/framework.properties
+[m[36m[DEBUG] 2021-04-06 22:05:15.785 [main] Config - Searching for property with key [datafile.location] value from file [/Users/atinsingh/Desktop] 
+[m[36m[DEBUG] 2021-04-06 22:05:15.789 [main] Config - Searching for property with key [datafile.name] value from file [MasterData.xlsx] 
+[m[32m[INFO ] 2021-04-06 22:05:18.182 [main] DataTest - Following Data Received Email: [abc@gmail.com] , FirstName: [ABC], LastName : [DEF] , Company: [Goggle] , Zip: [L6Y5N0]
+[m[32m[INFO ] 2021-04-06 22:05:18.212 [main] DataTest - Following Data Received Email: [john@doe.com] , FirstName: [John], LastName : [Doe] , Company: [CTS] , Zip: [L6R032]
+[m[32m[INFO ] 2021-04-06 22:05:18.215 [main] DataTest - Following Data Received Email: [jean@doe.com] , FirstName: [Jean], LastName : [Doe] , Company: [BMO] , Zip: [L6Y5N0]
+[m[32m[INFO ] 2021-04-06 22:05:18.228 [main] DataTest - Following Data Received Email: [harsiman@google.com] , FirstName: [HarSimarn], LastName : [Singh] , Company: [Goggle] , Zip: [L6Y5N3]
+[m

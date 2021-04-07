@@ -5,9 +5,6 @@ import io.pragra.learning.framework.drivermanager.DriverManager;
 import io.pragra.learning.framework.pages.ContactSales;
 import io.pragra.learning.framework.pages.RequestADemoPage;
 import io.pragra.learning.framework.pages.TopNav;
-import io.pragra.learning.framework.pages.meeting.ContactSales;
-import org.apache.log4j.PropertyConfigurator;
-import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.ElementNotSelectableException;
@@ -29,7 +26,6 @@ public class DemoTest {
 
     @BeforeSuite
     public void setUp() {
-        DOMConfigurator.configure("/Users/agilaethiraj/IdeaProjects/qadec2020/src/log4j.xml");
         log.info("Setting up the driver");
         try {
             driver = DriverManager.getDriver();

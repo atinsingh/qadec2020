@@ -38,8 +38,8 @@ public class TopNav {
    @FindBy(xpath = "//div[@class='navbar-collapse collapse']//ul//li//a[@id='btnJoinMeeting']")
 private WebElement join;
 
-   @FindBy(xpath = "//div[@class='navbar-collapse collapse']//ul[@role='navigation']//li[@class='dropdown mobile-hide']//a[@id='btnSolutions']")
-   private WebElement solutions;
+//   @FindBy(xpath = "//div[@class='navbar-collapse collapse']//ul[@role='navigation']//li[@class='dropdown mobile-hide']//a[@id='btnSolutions']")
+//   private WebElement solutions;
    @FindBy(xpath = "//*[@id=\"first-col-nav\"]/div/ul/li[1]/a")
    private WebElement meeting;
 
