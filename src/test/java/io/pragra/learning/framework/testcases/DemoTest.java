@@ -5,7 +5,7 @@ import io.pragra.learning.framework.drivermanager.DriverManager;
 import io.pragra.learning.framework.pages.ContactSales;
 import io.pragra.learning.framework.pages.RequestADemoPage;
 import io.pragra.learning.framework.pages.TopNav;
-import org.apache.logging.log4j.LogManager;
+
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.ElementNotSelectableException;
