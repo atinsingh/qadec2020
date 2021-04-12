@@ -1,8 +1,8 @@
 package io.pragra.learning.framework.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.Set;
 
 public class ContactSales {
-
+   private static final Logger log=LogManager.getLogger(ContactSales.class);
     private WebDriver webDriver;
 
     @FindBy(xpath = "//div[@class='page-header']/h1")
@@ -71,17 +71,39 @@ public class ContactSales {
         PageFactory.initElements(webDriver,this);
     }
     public ContactSales heading() {
-        this.page_Heading.equals("Contact Sales");
+        try {
+            this.page_Heading.equals("Contact Sales");
+
+        }
+        catch (InvalidArgumentException e){
+            log.error("The content of the element does not match with the expected outcome");
+            e.printStackTrace();
+        }
         return this;
     }
 
     public ContactSales keyInEmail(String email) {
-        this.e_mail.sendKeys(email);
+        try {
+            this.e_mail.sendKeys(email);
+
+        }
+        catch (ElementNotInteractableException e){
+            log.warn("The element is not interactable and cannot be performed any actions on it");
+            e.getMessage();
+
+        }
         return this;
     }
 
     public ContactSales keyInCompany(String company) {
-        this.company1.sendKeys(company);
+        try {
+            this.company1.sendKeys(company);
+
+        }
+        catch (ElementNotSelectableException e){
+            log.warn("Kindly check the address of the element before performing the necessary action");
+            e.printStackTrace();
+        }
         return this;
     }
 
@@ -94,8 +116,14 @@ public class ContactSales {
         return this;
     }
     public ContactSales keyInEmpCount() {
-        this.emp_count.click();
+        try {
+            this.emp_count.click();
 
+        }
+        catch (ElementClickInterceptedException e){
+            log.error("Unable to perform the click operation on the given address of the element",emp_count);
+            e.getMessage();
+        }
         return this;
     }
 
@@ -105,18 +133,27 @@ public class ContactSales {
         }
 
     public ContactSales keyInCountry() throws InterruptedException {
-        this.country_name.click();
-        Select countryName = new Select(webDriver.findElement(By.id("country")));
-        countryName.selectByVisibleText("Canada");
-        Thread.sleep(2000);
+        try {
+            this.country_name.click();
+            Select countryName = new Select(webDriver.findElement(By.id("country")));
+            countryName.selectByVisibleText("Canada");
+            Thread.sleep(2000);
+
+        }
+        catch (InvalidSelectorException e){
+            log.error("The address of the element[{}] is invalid", country_name);
+            e.printStackTrace();
+        }
         return this;
     }
 
     public ContactSales keyInState() throws InterruptedException {
-        this.state_name.click();
-        Select stateName = new Select(webDriver.findElement(By.id("state")));
-        stateName.selectByVisibleText("Ontario");
-        Thread.sleep(2000);
+        log.debug("searching for the element [{}] and selecting the required data",state_name,"ontario");
+
+            this.state_name.click();
+            Select stateName = new Select(webDriver.findElement(By.id("state")));
+            stateName.selectByVisibleText("Ontario");
+            Thread.sleep(2000);
         return this;
     }
     public ContactSales keyInHQZip(String zip) {
@@ -140,17 +177,25 @@ public class ContactSales {
 
     public ContactSales privacy() throws InterruptedException {
         this.privacyPolicy.click();
-        Set<String> windowHandles = webDriver.getWindowHandles();
-        String currentWindow = webDriver.getWindowHandle();
-        for (String window: windowHandles)
-        {if(!window.equals(currentWindow)){
-            webDriver.switchTo().window(window);
-            break;
-        }
+        try {
+            Set<String> windowHandles = webDriver.getWindowHandles();
+            String currentWindow = webDriver.getWindowHandle();
+            for (String window : windowHandles) {
+                if (!window.equals(currentWindow)) {
+                    webDriver.switchTo().window(window);
+                    break;
+                }
+
+            }
+            Thread.sleep(5000);
+            webDriver.switchTo().window(currentWindow);
 
         }
-        Thread.sleep(5000);
-        webDriver.switchTo().window(currentWindow);
+        catch (NoSuchWindowException e){
+            log.fatal("There is no such window to perform the switch option, invalid operation", webDriver.getWindowHandle());
+            e.getLocalizedMessage();
+        }
+
         return this;
     }
 

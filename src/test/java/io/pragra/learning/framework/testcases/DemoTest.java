@@ -5,8 +5,7 @@ import io.pragra.learning.framework.drivermanager.DriverManager;
 import io.pragra.learning.framework.pages.ContactSales;
 import io.pragra.learning.framework.pages.RequestADemoPage;
 import io.pragra.learning.framework.pages.TopNav;
-import org.apache.log4j.PropertyConfigurator;
-import org.apache.log4j.xml.DOMConfigurator;
+
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.ElementNotSelectableException;
@@ -15,12 +14,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import org.apache.logging.log4j.Logger;
 
 import java.net.MalformedURLException;
-import java.util.logging.Logger;
+
 
 public class DemoTest {
-    static Logger log = Logger.getLogger("DemoTest.class");
+  Logger log= LogManager.getLogger("DemoTest.class");
 
     WebDriver driver;
     TopNav topNav;
@@ -28,28 +28,29 @@ public class DemoTest {
 
     @BeforeSuite
     public void setUp() {
-        DOMConfigurator.configure("/Users/agilaethiraj/IdeaProjects/qadec2020/src/log4j.xml");
         log.info("Setting up the driver");
         try {
             driver = DriverManager.getDriver();
             driver.get(((String) Config.getProperty("app.url")));
         } catch (NullPointerException e) {
-            System.out.println("No such key specified in the properties");
+            log.info("No value mentioned for the app.url key in the framework.properties file");
             e.printStackTrace();
+
         }
     }
 
     @Test
     public void demoTest() {
-        log.info("Executing first test case");
 
 
         topNav = new TopNav(driver);
+        log.debug("Comparing the page heading text value to the expected text");
         try {
             RequestADemoPage requestADemoPage = topNav.clickRequest();
 
 
             Assert.assertEquals(requestADemoPage.getPageHeading().getText(), "Requesting a Demo");
+            log.info("Inputting user details");
 
 
             requestADemoPage
@@ -59,7 +60,9 @@ public class DemoTest {
                     .keyFirstName("AASDR");
 
         } catch (AssertionError e) {
-            System.out.println("Mismatch of expected and actual");
+            log.error("Page heading text does not match with the expected result");
+            e.printStackTrace();
+
         }
     }
 
