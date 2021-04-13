@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Default Suite">
+
+    <test  name="Default Test">
+        <classes>
+           <!-- <class name="io.pragra.learning.framework.testcases.Demo5"></class>-->
+           <!-- <class name="io.pragra.learning.framework.testcases.FrameworkTest"></class>-->
+            <!--<class name="io.pragra.learning.framework.testcases.DataTest1"></class>-->
+            <!--<class name="io.pragra.learning.framework.testcases.DemoTest1"></class>-->
+           <!-- <class name="io.pragra.learning.framework.testcases.Demo4"></class>-->
+            <class name="io.pragra.learning.framework.testcases.ContactSalesTest"></class>
+        </classes>
+    </test>
+        </suite>

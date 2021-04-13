@@ -4,6 +4,7 @@ import io.pragra.learning.framework.config.Config;
 import io.pragra.learning.framework.drivermanager.DriverManager;
 import io.pragra.learning.framework.pages.TopNav;
 import io.pragra.learning.framework.pages.meeting.Solutions;
+import io.pragra.learning.framework.utlis.Reporting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.ElementNotInteractableException;
@@ -14,7 +15,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class Demo5 {
+public class Demo5 extends Reporting {
     Logger log= LogManager.getLogger(Demo5.class);
     WebDriver webDriver;
     TopNav topnav;
@@ -27,6 +28,7 @@ public class Demo5 {
     }
     @Test
     public void set1()throws InterruptedException {
+        test=reports.createTest("set1");
         try {
             topnav = new TopNav(webDriver);
             Solutions sol = topnav.clickRequest5();

@@ -6,6 +6,7 @@ import io.pragra.learning.framework.pages.ContactSales;
 import io.pragra.learning.framework.pages.RequestADemoPage;
 import io.pragra.learning.framework.pages.TopNav;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.ElementNotSelectableException;
@@ -20,7 +21,7 @@ import java.net.MalformedURLException;
 
 
 public class DemoTest {
-  Logger log= LogManager.getLogger("DemoTest.class");
+  Logger log= LogManager.getLogger(DemoTest.class);
 
     WebDriver driver;
     TopNav topNav;

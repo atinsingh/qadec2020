@@ -1,9 +1,12 @@
-[32m[INFO ] 2021-04-09 16:05:51.138 [main] Config - Reading configuration file from:  src/test/resources/framework.properties
-[m[36m[DEBUG] 2021-04-09 16:05:51.142 [main] Config - Searching for property with key [excel.file.location] value from file [/Users/agilaethiraj/Excel_Sheet] 
-[m[36m[DEBUG] 2021-04-09 16:05:51.143 [main] Config - Searching for property with key [excel.file.name] value from file [StudentsRecord.xlsx] 
-[m[32m[INFO ] 2021-04-09 16:05:51.686 [main] DataTest1 - The Following are the details of the student,Email:[John@gmail.com],FirstName:[John],LastName:[John],Company_Name:[Tech Mahindra},Zip:[M6tg6]
-[m[32m[INFO ] 2021-04-09 16:05:51.688 [main] DataTest1 - The Following are the details of the student,Email:[Smith@gmail.com],FirstName:[Smith],LastName:[Watson],Company_Name:[CTS},Zip:[G8688]
-[m[32m[INFO ] 2021-04-09 16:05:51.689 [main] DataTest1 - The Following are the details of the student,Email:[Agila@gmail.com],FirstName:[Agila],LastName:[Ethiraj],Company_Name:[Google},Zip:[J8273]
-[m[32m[INFO ] 2021-04-09 16:05:51.689 [main] DataTest1 - The Following are the details of the student,Email:[lucy@gmail.com],FirstName:[Lucy],LastName:[Sandra],Company_Name:[Wipro},Zip:[H7677]
-[m[32m[INFO ] 2021-04-09 16:05:51.690 [main] DataTest1 - The Following are the details of the student,Email:[Katie@gmail.com],FirstName:[Katie],LastName:[Mosses],Company_Name:[TCS},Zip:[A223]
+[36m[DEBUG] 2021-04-13 11:55:05.366 [main] DriverManager - Comparing the browser name from the file framework.properties to the [chrome]
+[m[32m[INFO ] 2021-04-13 11:55:05.370 [main] Config - Reading configuration file from:  src/test/resources/framework.properties
+[m[36m[DEBUG] 2021-04-13 11:55:05.371 [main] Config - Searching for property with key [browser.name] value from file [chrome] 
+[m[36m[DEBUG] 2021-04-13 11:55:05.371 [main] Config - Searching for property with key [chrome.driver.location] value from file [drivers/chromedriver] 
+[m[32m[INFO ] 2021-04-13 11:55:05.372 [main] DriverManager - Opening Chrome Driver Browser Successfully
+[m[36m[DEBUG] 2021-04-13 11:55:06.953 [main] Config - Searching for property with key [browser.name] value from file [chrome] 
+[m[32m[INFO ] 2021-04-13 11:55:06.971 [main] DriverManager - Web driver name and the location not specified
+[m[36m[DEBUG] 2021-04-13 11:55:06.972 [main] DriverManager - Setting the default Webdriver name and the location in the framework.properties file
+[m[32m[INFO ] 2021-04-13 11:55:06.972 [main] DriverManager - Opening the default driver as a Chrome driver
+[m[36m[DEBUG] 2021-04-13 11:55:07.929 [main] Config - Searching for property with key [app.url] value from file [https://zoom.us/] 
+[m[36m[DEBUG] 2021-04-13 11:55:15.118 [main] ContactSales - searching for the element [[[ChromeDriver: chrome on MAC (717e93662ffe764a7d6ab45565d4764e)] -> xpath: //div/select[@id='state']]] and selecting the required data
 [m
