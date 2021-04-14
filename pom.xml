@@ -89,8 +89,12 @@
                         <propertyName>webdriver.chrome.driver</propertyName>
                         <buildDirectory>${chrome.driver.location}</buildDirectory>
                     </systemPropertyVariables>
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>${testng.xml.location}</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
                     <suiteXmlFiles>
-                        <suiteXmlFile>${testng.xml.location}</suiteXmlFile>
+                        <file>testng.xml</file>
+                        <file>testng2.xml</file>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

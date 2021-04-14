@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static org.yaml.snakeyaml.tokens.Token.ID.Key;
 
@@ -14,7 +15,8 @@ import static org.yaml.snakeyaml.tokens.Token.ID.Key;
 public class DriverManager {
     private static final Logger log=LogManager.getLogger(DriverManager.class);
     private static DriverManager driverManager;
-    private WebDriver driver;
+    private RemoteWebDriver driver;
+    private static String brower;
 
     public DriverManager() {
         init();
@@ -24,14 +26,14 @@ public class DriverManager {
     public void init()  {
         log.debug("Comparing the browser name from the file framework.properties to the [{}]",BrowserType.CHROME);
         try {
-            if (Config.getProperty("browser.name").equalsIgnoreCase(BrowserType.CHROME)) {
+            if (Config.getProperty("browser.name").equalsIgnoreCase(BrowserType.CHROME) || brower.equals(BrowserType.CHROME)) {
                 if (System.getProperty("webdriver.chrome.driver") == null) {
                     System.setProperty("webdriver.chrome.driver", Config.getProperty("chrome.driver.location"));
                 }
                 log.info("Opening Chrome Driver Browser Successfully");
                 driver = new ChromeDriver();
 
-            } else if (((String) Config.getProperty("browser.name")).equalsIgnoreCase(BrowserType.FIREFOX)) {
+            } else if (((String) Config.getProperty("browser.name")).equalsIgnoreCase(BrowserType.FIREFOX)|| brower.equals(BrowserType.FIREFOX)) {
                 log.debug("Comparing the browser name from the file framework.properties to the [{}]", BrowserType.FIREFOX);
                     if (System.getProperty("webdriver.gecko.driver") == null) {
                         System.setProperty("webdriver.gecko.driver", (String) Config.getProperty("firefox.driver.location"));
@@ -61,6 +63,13 @@ public class DriverManager {
     }
 
 
+    public synchronized static WebDriver getDriver(String browser) {
+        DriverManager.brower = browser;
+        if(driverManager == null) {
+            driverManager = new DriverManager();
+        }
+        return driverManager.driver;
+    }
 
 
 
