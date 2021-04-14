@@ -19,7 +19,7 @@ public class SignupTest {
     @BeforeSuite
     public void setUp() {
         driver = DriverManager.getDriver();
-        driver.get(((String) Config.getProperty("app.url")));
+        driver.get(Config.getProperty("app.url"));
     }
     @Test
     public  void SignupTest() {

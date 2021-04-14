@@ -2,21 +2,15 @@ package io.pragra.learning.framework.testcases;
 
 import io.pragra.learning.framework.config.Config;
 import io.pragra.learning.framework.drivermanager.DriverManager;
-import io.pragra.learning.framework.pages.ContactSales;
 import io.pragra.learning.framework.pages.RequestADemoPage;
 import io.pragra.learning.framework.pages.TopNav;
-
-import org.apache.poi.ss.formula.functions.T;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.ElementNotSelectableException;
-import org.openqa.selenium.InvalidArgumentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.UnreachableBrowserException;
-import org.testng.Assert;
-import org.testng.annotations.*;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.net.MalformedURLException;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 
 public class DemoTest {
