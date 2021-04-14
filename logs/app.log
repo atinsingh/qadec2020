@@ -1,8 +1,0 @@
-2021-04-06 21:16:38,052 INFO i.p.l.f.c.Config [main] Reading configuration file from:  src/test/resources/framework.properties
-2021-04-06 21:16:38,065 DEBUG i.p.l.f.c.Config [main] Searching for property with key [browser.name] value from file [chrome] 
-2021-04-06 21:16:38,067 DEBUG i.p.l.f.c.Config [main] Searching for property with key [chrome.driver.location] value from file [drivers/chromedriver] 
-2021-04-06 21:16:44,889 DEBUG i.p.l.f.c.Config [main] Searching for property with key [app.url] value from file [https://zoom.us/] 
-2021-04-06 21:17:55,383 INFO i.p.l.f.c.Config [main] Reading configuration file from:  src/test/resources/framework.properties
-2021-04-06 21:17:55,388 DEBUG i.p.l.f.c.Config [main] Searching for property with key [browser.name] value from file [chrome] 
-2021-04-06 21:17:55,388 DEBUG i.p.l.f.c.Config [main] Searching for property with key [chrome.driver.location] value from file [drivers/chromedriver] 
-2021-04-06 21:17:59,971 DEBUG i.p.l.f.c.Config [main] Searching for property with key [app.url] value from file [https://zoom.us/] 

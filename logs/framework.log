@@ -1,9 +1,0 @@
-[32m[INFO ] 2021-04-09 16:05:51.138 [main] Config - Reading configuration file from:  src/test/resources/framework.properties
-[m[36m[DEBUG] 2021-04-09 16:05:51.142 [main] Config - Searching for property with key [excel.file.location] value from file [/Users/agilaethiraj/Excel_Sheet] 
-[m[36m[DEBUG] 2021-04-09 16:05:51.143 [main] Config - Searching for property with key [excel.file.name] value from file [StudentsRecord.xlsx] 
-[m[32m[INFO ] 2021-04-09 16:05:51.686 [main] DataTest1 - The Following are the details of the student,Email:[John@gmail.com],FirstName:[John],LastName:[John],Company_Name:[Tech Mahindra},Zip:[M6tg6]
-[m[32m[INFO ] 2021-04-09 16:05:51.688 [main] DataTest1 - The Following are the details of the student,Email:[Smith@gmail.com],FirstName:[Smith],LastName:[Watson],Company_Name:[CTS},Zip:[G8688]
-[m[32m[INFO ] 2021-04-09 16:05:51.689 [main] DataTest1 - The Following are the details of the student,Email:[Agila@gmail.com],FirstName:[Agila],LastName:[Ethiraj],Company_Name:[Google},Zip:[J8273]
-[m[32m[INFO ] 2021-04-09 16:05:51.689 [main] DataTest1 - The Following are the details of the student,Email:[lucy@gmail.com],FirstName:[Lucy],LastName:[Sandra],Company_Name:[Wipro},Zip:[H7677]
-[m[32m[INFO ] 2021-04-09 16:05:51.690 [main] DataTest1 - The Following are the details of the student,Email:[Katie@gmail.com],FirstName:[Katie],LastName:[Mosses],Company_Name:[TCS},Zip:[A223]
-[m
