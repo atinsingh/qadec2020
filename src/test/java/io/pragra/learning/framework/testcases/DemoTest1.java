@@ -4,27 +4,30 @@ import io.pragra.learning.framework.config.Config;
 import io.pragra.learning.framework.drivermanager.DriverManager;
 import io.pragra.learning.framework.pages.TopNav;
 import io.pragra.learning.framework.pages.meeting.ContactSales;
+import io.pragra.learning.framework.utlis.Reporting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.*;
 
-public class DemoTest1 {
+import java.io.IOException;
+
+public class DemoTest1 extends Reporting {
     Logger log = LogManager.getLogger(DemoTest1.class);
     WebDriver driver;
     TopNav topNav;
-    @BeforeSuite
+    @BeforeClass
     public void set(){
        driver= DriverManager.getDriver();
        driver.get(((String) Config.getProperty("app.url")));
     }
     @Test
-    public void test() {
+    public void test() throws IOException {
+        test=reports.createTest("test");
         try {
             topNav = new TopNav(driver);
             ContactSales cc = topNav.clickRequest3();
@@ -40,6 +43,8 @@ public class DemoTest1 {
                     .add("N/A")
                     .in()
                     .sub();
+
+
         }
         catch (ElementClickInterceptedException e){
             log.warn("Unable to perform the click operation on the given address of the element");
@@ -50,9 +55,22 @@ public class DemoTest1 {
             e.getMessage();
 
         }
+        String title = driver.getTitle();
+        System.out.println(title);
+        if(driver.getTitle().equals("Contacting Sales - Zoom")){
+            Assert.assertTrue(true);
+        }
+        else
+        {
+            captureScreenshot(driver,"test");
+            System.out.println("Title did not match");
+        }
+
+
     }
-    @AfterSuite
+    @AfterClass
     public void close() throws InterruptedException {
+        test=reports.createTest("close");
         Thread.sleep(1000);
         try {
             driver.quit();

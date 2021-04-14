@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 
 public class DemoTest {
-  Logger log= LogManager.getLogger("DemoTest.class");
+  Logger log= LogManager.getLogger(DemoTest.class);
 
     WebDriver driver;
     TopNav topNav;
