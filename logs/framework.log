@@ -1,9 +1,28 @@
-[36m[DEBUG] 2021-04-13 21:36:50.257 [TestNG-tests-1] DriverManager - Comparing the browser name from the file framework.properties to the [chrome]
-[m[32m[INFO ] 2021-04-13 21:36:50.263 [TestNG-tests-1] Config - Reading configuration file from:  src/test/resources/framework.properties
-[m[36m[DEBUG] 2021-04-13 21:36:50.264 [TestNG-tests-1] Config - Searching for property with key [browser.name] value from file [chrome] 
-[m[36m[DEBUG] 2021-04-13 21:36:50.265 [TestNG-tests-1] Config - Searching for property with key [chrome.driver.location] value from file [drivers/chromedriver] 
-[m[32m[INFO ] 2021-04-13 21:36:50.266 [TestNG-tests-1] DriverManager - Opening Chrome Driver Browser Successfully
-[m[36m[DEBUG] 2021-04-13 21:36:54.547 [TestNG-tests-1] Config - Searching for property with key [app.url] value from file [https://zoom.us/] 
-[m[36m[DEBUG] 2021-04-13 21:37:19.051 [TestNG-tests-1] ContactSales - searching for the element [[[ChromeDriver: chrome on MAC (0430d592c87d1eccf4c482efbd43399c)] -> xpath: //div/select[@id='state']]] and selecting the required data
-[m[36m[DEBUG] 2021-04-13 21:37:51.529 [TestNG-tests-1] Config - Searching for property with key [app.url] value from file [https://zoom.us/] 
+[36m[DEBUG] 2021-04-16 21:41:17.460 [main] DriverManager - Comparing the browser name from the file framework.properties to the [chrome]
+[m[32m[INFO ] 2021-04-16 21:41:17.463 [main] Config - Reading configuration file from:  src/test/resources/framework.properties
+[m[36m[DEBUG] 2021-04-16 21:41:17.464 [main] Config - Searching for property with key [browser.name] value from file [chrome] 
+[m[36m[DEBUG] 2021-04-16 21:41:17.464 [main] Config - Searching for property with key [chrome.driver.location] value from file [drivers/chromedriver] 
+[m[32m[INFO ] 2021-04-16 21:41:17.465 [main] DriverManager - Opening Chrome Driver Browser Successfully
+[m[36m[DEBUG] 2021-04-16 21:41:19.014 [main] Config - Searching for property with key [app.url] value from file [https://zoom.us/] 
+[m[32m[INFO ] 2021-04-16 21:41:20.468 [main] Utils - Creating a key screenshot.pass.dir on the property file, if not created
+[m[36m[DEBUG] 2021-04-16 21:41:20.468 [main] Config - Searching for property with key [screenshot.pass.dir] value from file [target/screenshot/pass] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.469 [main] Config - Searching for property with key [screenshot.fail.dir] value from file [target/screenshot/fail] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.469 [main] Config - Searching for property with key [report.location] value from file [target/reports] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.469 [main] Config - Searching for property with key [file.ts.format] value from file [yyyyMMdd_HHmmSS] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.470 [main] Config - Searching for property with key [report.location] value from file [target/reports] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.470 [main] Config - Searching for property with key [report.file.nameprefix] value from file [TestRun] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.503 [main] Config - Searching for property with key [document.title] value from file [AutomationReport] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.503 [main] Config - Searching for property with key [report.name] value from file [FunctionalReport] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.579 [main] Config - Searching for property with key [HostName] value from file [LocalHost] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.579 [main] Config - Searching for property with key [OS] value from file [macOS] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.579 [main] Config - Searching for property with key [tester] value from file [Agila] 
+[m[36m[DEBUG] 2021-04-16 21:41:20.579 [main] Config - Searching for property with key [browser] value from file [chrome] 
+[m[32m[INFO ] 2021-04-16 21:41:26.828 [main] Utils - Creating a key screenshot.pass.dir on the property file, if not created
+[m[36m[DEBUG] 2021-04-16 21:41:26.829 [main] Config - Searching for property with key [screenshot.pass.dir] value from file [target/screenshot/pass] 
+[m[36m[DEBUG] 2021-04-16 21:41:26.829 [main] Config - Searching for property with key [screenshot.fail.dir] value from file [target/screenshot/fail] 
+[m[36m[DEBUG] 2021-04-16 21:41:26.829 [main] Config - Searching for property with key [report.location] value from file [target/reports] 
+[m[32m[INFO ] 2021-04-16 21:41:27.275 [main] Utils - Setting file format for the screenshots
+[m[36m[DEBUG] 2021-04-16 21:41:27.275 [main] Config - Searching for property with key [file.ts.format] value from file [yyyyMMdd_HHmmSS] 
+[m[36m[DEBUG] 2021-04-16 21:41:27.275 [main] Config - Searching for property with key [screenshot.pass.dir] value from file [target/screenshot/pass] 
+[m[36m[DEBUG] 2021-04-16 21:41:27.275 [main] Config - Searching for property with key [screenshot.ext] value from file [.png] 
 [m
